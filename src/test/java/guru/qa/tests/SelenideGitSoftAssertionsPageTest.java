@@ -23,7 +23,7 @@ public class SelenideGitSoftAssertionsPageTest {
     }
 
     @Test
-    void OpenSoftAssertionsBySearch() {
+    void openSoftAssertionsBySearch() {
 
         open("/selenide");
 
@@ -37,7 +37,7 @@ public class SelenideGitSoftAssertionsPageTest {
     }
 
     @Test
-    void OpenSoftAssertionsByShowMore() {
+    void openSoftAssertionsByShowMore() {
 
         open("/selenide");
 
