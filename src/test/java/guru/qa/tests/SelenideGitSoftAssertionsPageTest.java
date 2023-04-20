@@ -1,14 +1,13 @@
 package guru.qa.tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import guru.qa.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SelenideGitSoftAssertionsPageTest {
+public class SelenideGitSoftAssertionsPageTest extends TestBase {
 
 
 //        - Откройте страницу Selenide в Github
@@ -16,16 +15,11 @@ public class SelenideGitSoftAssertionsPageTest {
 //        - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
 //        - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
 
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://github.com/selenide";
-        Configuration.browserSize = "1920x1080";
-    }
 
     @Test
     void openSoftAssertionsBySearch() {
 
-        open("/selenide");
+        open("selenide/selenide");
 
         $("#wiki-tab").click();
         $("#wiki-pages-filter").setValue("SoftAssertions");
@@ -39,7 +33,7 @@ public class SelenideGitSoftAssertionsPageTest {
     @Test
     void openSoftAssertionsByShowMore() {
 
-        open("/selenide");
+        open("selenide/selenide");
 
         $("#wiki-tab").click();
         $(".wiki-more-pages-link").$("[type='button']").click();
