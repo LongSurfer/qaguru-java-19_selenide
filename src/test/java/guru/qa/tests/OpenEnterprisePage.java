@@ -5,6 +5,7 @@ import guru.qa.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -17,8 +18,8 @@ public class OpenEnterprisePage extends TestBase {
     void openingEnterprizePage() {
         open("https://github.com/");
 
-        $(".HeaderMenu-item", 1).hover();
-        $("a[href='/enterprise']").click();
+        $(byText("Solutions")).hover();
+        $(byText("Enterprise")).click();
 
         $(".application-main ").shouldHave(text("Build like the best"));
 
